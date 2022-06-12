@@ -1,2 +1,134 @@
+:root
+  --first-color: #1E1f23
+  --second-color: #7a898e
+  --third-color: #ffffff30
+  --fourth-color: #00ffb1
+  --fifth-color: #00000000
+  --sixth-color: #FFF
+
+@font-face
+  font-family: 'Helvetica'
+  src: url('~/assets/fonts/Helvetica.woff2') format('woff2')
+
+::selection
+  color: var(--fourth-color)
+  background: var(--fifth-color)
+
+*
+  margin: 0
+  padding: 0
+  text-transform: uppercase
+  font-family: Helvetica, sans-serif
+  font-weight: 100
+  transition: all 0.2s ease
+  text-rendering: geometricprecision
+
+ul li
+  list-style: none
+
 body
-  background: orange
+  background-color: var(--first-color)
+  color: var(--second-color)
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: calc(100vh - 40px)
+  padding: 20px
+  font-size: 62.5%
+
+a
+  color: var(--sixth-color)
+  text-decoration: none
+
+  &:hover
+    color: var(--fourth-color)
+
+h1, h2, li
+  font-size: 0.6vw
+  letter-spacing: 0.04vw
+  line-height: 0.8vw
+
+header nav
+  border-bottom: 1px solid var(--third-color)
+  padding-bottom: 0.6rem
+
+header nav
+  display: flex
+  justify-content: space-between
+
+header nav ul
+  display: flex
+  gap: 60px
+
+header section
+  display: flex
+  justify-content: flex-end
+
+header section ul
+  width: 40vw
+  max-width: 40vw
+
+header section ul li
+  border-bottom: 1px solid var(--third-color)
+  padding: 0.6rem 0
+
+main
+  display: flex
+  justify-content: center
+
+main h1
+  font-size: 12vw
+  margin-left: -0.7vw
+  letter-spacing: normal
+  line-height: normal
+
+footer
+  display: flex
+  justify-content: flex-end
+  gap: 20px
+
+footer ul
+  width: 40vw
+  max-width: 40vw
+
+footer ul li
+  border-bottom: 1px solid var(--third-color)
+  padding: 0.6rem 0
+
+footer ul li:first-child
+  border-top: 1px solid var(--third-color)
+
+@media screen and (max-width: 1250px)
+  h1, h2, li
+    font-size: 1vw
+    letter-spacing: 0.04vw
+    line-height: 1.2vw
+
+@media screen and (max-width: 800px)
+  h1, h2, li
+    font-size: 1.2vw
+    letter-spacing: 0.04vw
+    line-height: 1.4vw
+  
+  header section ul
+    width: 100%
+    max-width: initial
+  
+  footer ul
+    width: 100%
+    max-width: initial
+  
+@media screen and (max-width: 400px)
+  h1, h2, li
+    font-size: 3vw
+    letter-spacing: 0.04vw
+    line-height: 5.2vw
+  
+  header section ul
+    width: 100%
+    max-width: initial
+  
+  footer ul
+    width: 100%
+    max-width: initial
