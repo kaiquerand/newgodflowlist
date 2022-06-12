@@ -1,2 +1,2 @@
-# newgodflowlist
-Newgodflow© — Portfolio 22
+# Newgodflow©
+Portfolio 22
