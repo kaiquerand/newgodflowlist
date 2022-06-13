@@ -2,11 +2,25 @@
 footer
   ul
     li Latest projects / experiments
-    li 
-      a(href='https://kero.makeup' target='_blank') 001 — Kero.makeup ( NuxtJS, Contentful, GSAP )
-    li 
-      a(href='https://leveleleven.studio' target='_blank') 002 — Leveleleven (ThreeJS, NodeJS)
-    li 
-      a(href='https://keroexperiments.netlify.app' target='_blank') 003 — Kero experiments
+
+    li(v-for='project in projects')
+      a(:href='project.fields.link' target='_blank') {{project.fields.title}} — {{project.fields.stack}}
+
     li All rights reserved — Newgodflow©
 </template>
+
+<script>
+  import cms from '~/plugins/contentful'
+
+  export default {
+    data () {
+      return {
+        projects: null
+      }
+    },
+    async fetch() {
+      const response = await cms.getEntries({ content_type: 'cases' })
+      if (response.items.length > 0) this.projects = response.items
+    }
+  }
+</script>

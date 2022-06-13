@@ -1,3 +1,13 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
+const contentful = require('contentful')
+
+const client = contentful.createClient({
+  space: process.env.CTF_SPACE_ID,
+  accessToken: process.env.CTF_ACCESS_TOKEN
+})
+
 export default {
   target: 'static',
 
@@ -19,6 +29,19 @@ export default {
 
   css: [
     '~/assets/styles/app.sass'
+  ],
+
+  plugins: [
+    '~/plugins/contentful'
+  ],
+
+  buildModules: [
+    '@nuxtjs/dotenv'
+  ],
+
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
 
   components: true
